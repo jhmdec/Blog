@@ -37,7 +37,7 @@ namespace Blog.Migrations
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-            // Create role Admin and 1 user.
+            // Create role Admin 
             if (!roleManager.RoleExists("Admin"))
             {
 
@@ -61,7 +61,7 @@ namespace Blog.Migrations
                 }
             }
 
-            // Create role Manager and 1 manager...
+            // Create role Author
             if (!roleManager.RoleExists("Author"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
