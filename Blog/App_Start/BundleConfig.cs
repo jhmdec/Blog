@@ -23,8 +23,10 @@ namespace Blog
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap_united.css",
+                      "~/Content/site.css",
+                      "~/Content/BlogStyle.css"
+                      ));
         }
     }
 }
