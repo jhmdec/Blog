@@ -156,11 +156,12 @@ namespace Blog.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    IdentityResult res = UserManager.Create(user, model.Password);
-                    if (res.Succeeded)
+                    string userId = User.Identity.GetUserId();
+                    if (userId!=null)
                     {
-                        result = UserManager.AddToRole(user.Id, "Author");
-                    }
+                        await this.UserManager.AddToRoleAsync(userId, "Author");
+                    };
+                    
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
