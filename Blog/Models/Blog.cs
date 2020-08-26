@@ -14,14 +14,14 @@ namespace Blog.Models
         [StringLength(100)]
         public string Title { get; set; }
         [Required]
-        [StringLength(255)]
+        [StringLength(512)]
         public string Body { get; set; }
         [Required]
         public DateTime Created { get; set; }
         public string BlogImg { get; set; }
 
         public string UserId { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public virtual ApplicationUser Author { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
     }
 }

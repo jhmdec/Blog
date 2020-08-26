@@ -18,6 +18,7 @@ namespace Blog.Models
         public string PostImg { get; set; }
         public int BlogId { get; set; }
         public int Theme { get; set; }
+        public bool CommentsAllowed { get; set; }
 
         public virtual Blog Blog { get; set; }
         public virtual ICollection<Tag> Tags { get; set; }
